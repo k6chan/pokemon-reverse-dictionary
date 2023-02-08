@@ -1,9 +1,12 @@
-from flask import Flask
-import markdown
+from flask import Flask, request, render_template
+# import markdown
 
 
 app = Flask(__name__)
 
-@app.route("/")
-def hello_world():
-    return markdown.markdown("Hello world!")
+@app.route("/", methods=["GET","POST"])
+def query():
+    if request.method == "POST":
+        user_query = request.form.get("query")
+        return render_template("output.html",user_query=user_query)
+    return render_template("input.html")
