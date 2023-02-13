@@ -1,25 +1,16 @@
-# 1) choose base container
-# generally use the most recent tag
+# Python Docker image
+FROM python:3.8-slim-buster
 
-# base notebook, contains Jupyter and relevant tools
-# See https://github.com/ucsd-ets/datahub-docker-stack/wiki/Stable-Tag 
-# for a list of the most current containers we maintain
-ARG BASE_CONTAINER=ucsdets/datahub-base-notebook:2022.3-stable
+RUN apt-get -y update
 
-FROM $BASE_CONTAINER
+WORKDIR /usr/src/app
 
-LABEL maintainer="UC San Diego ITS/ETS <ets-consult@ucsd.edu>"
+COPY requirements.txt ./
 
-# 2) change to root to install packages
-USER root
+RUN pip install --no-cache-dir -r requirements.txt
 
-RUN apt-get update
-RUN apt-get -y install aria2 nmap traceroute
+COPY . .
 
-# 3) install packages using notebook user
-USER jovyan
+WORKDIR src/models
 
-RUN pip install --no-cache-dir pandas numpy bs4 requests flask
-
-# Override command to disable running jupyter notebook at launch
-CMD ["/bin/bash"]
+CMD ["python", "-m", "flask", "--app", "application", "run", "--host=0.0.0.0"]
