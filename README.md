@@ -6,9 +6,9 @@ A reverse dictionary for Pokemon as a Python Flask web app.
 
 *With approval from my TA, a `run.py` script is not necessary for this website project.*
 
-First, clone the repository to your device with `git clone`.
-
 ### Without Docker
+
+First, clone the repository to your device with `git clone`.
 
 Install the Python libraries in `requirements.txt` with `pip install --no-cache-dir -r requirements.txt`.
 
