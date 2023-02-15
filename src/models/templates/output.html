@@ -1,8 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="text-center">
-    <p class="mb-4">Your query is "{{user_query}}"</p>
+<div class="container">
+    <ol class="mb-4">
+        <li>{{pokemon_1[0]}} <img src={{pokemon_1[1]}} alt={{pokemon_1[0]}} /></li>
+        <li>{{pokemon_2[0]}} <img src={{pokemon_2[1]}} alt={{pokemon_2[0]}} /></li>
+        <li>{{pokemon_3[0]}} <img src={{pokemon_3[1]}} alt={{pokemon_3[0]}} /></li>
+        <li>{{pokemon_4[0]}} <img src={{pokemon_4[1]}} alt={{pokemon_4[0]}} /></li>
+        <li>{{pokemon_5[0]}} <img src={{pokemon_5[1]}} alt={{pokemon_5[0]}} /></li>
+    </ol>
     <p><a href="{{ url_for('query') }}">Return to home</a></p>
 </div>
 {% endblock %}
