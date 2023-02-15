@@ -10,13 +10,15 @@ First, clone the repository to your device with `git clone`.
 
 ### Without Docker
 
+Install the Python libraries in `requirements.txt` with `pip install --no-cache-dir -r requirements.txt`.
+
 Change directory into `src/models` and use the following command to run the dev server:
 
 `python -m flask --app application run`
 
 Access the server in your browser, usually `http://127.0.0.1:5000/`.
 
-### With Docker
+### With Docker (automatically installs libraries and starts the dev server)
 
 **The Flask server hosting is not compatible with Docker on DSMLP. This Dockerfile can only be run locally, not on DSMLP.**
 
