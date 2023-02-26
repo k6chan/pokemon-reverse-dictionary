@@ -1,8 +1,8 @@
-# Reverse Dictionary with Video Game Characters
+# <center>Reverse Dictionary with Video Game Characters</center>
 
 ### <center>Kaitlyn Chan</center>
 
-### <center>[GitHub Repository](https://github.com/k6chan/reverse-dictionary-pokemon)</center>
+### <center><a href=https://github.com/k6chan/reverse-dictionary-pokemon>GitHub Repository</a></center>
 
 ## Set up the Demo with Docker
 
