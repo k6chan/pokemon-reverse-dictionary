@@ -2,7 +2,7 @@
 
 ### <center>Kaitlyn Chan</center>
 
-### <center><a href=https://github.com/k6chan/reverse-dictionary-pokemon>GitHub Repository</a></center>
+### <center><a href="https://github.com/k6chan/reverse-dictionary-pokemon">GitHub Repository</a></center>
 
 ## Set up the Demo with Docker
 
