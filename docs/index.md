@@ -4,9 +4,9 @@
 
 ### <center><a href="https://github.com/k6chan/reverse-dictionary-pokemon">GitHub Repository</a></center>
 
-## Set up the Demo with Docker
-
 ## Topic
+
+## Set up the Demo with Docker
 
 ## Background
 
@@ -16,8 +16,12 @@
 
 ## Methods
 
-## Implementation
+### IR-TF-IDF
+
+### Word2Vec
 
 ## Results
+
+## Tools
 
 ## Development
