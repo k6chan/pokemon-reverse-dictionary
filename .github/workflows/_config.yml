@@ -51,5 +51,7 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v1
         
-  # Theme
-  remote_theme: pages-themes/cayman@v0.2.0
+  # Build settings
+  remote_theme: pages-themes/cayman
+  plugins:
+  - jekyll-remote-theme
