@@ -50,8 +50,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
-        
-  # Build settings
-  remote_theme: pages-themes/cayman
-  plugins:
-  - jekyll-remote-theme
