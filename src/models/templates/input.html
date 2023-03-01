@@ -1,9 +1,28 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<form method="post" class="text-center">
+<form method="post" class="text-center mb-5">
+    <p>Choose a model:</p>
+    <div class="container mb-4 g-2">
+        <div>
+            <input name="model_type" id="ir_tf_idf" value="ir_tf_idf" type="radio" checked />
+            <label for="ir_tf_idf">IR-TF-IDF</label>
+        </div>
+        <div>
+            <input name="model_type" id="ir_tf_idf_word2vec" value="ir_tf_idf_word2vec" type="radio" />
+            <label for="ir_tf_idf_word2vec">IR-TF-IDF with Word2Vec similar words</label>
+        </div>
+    </div>
+    <br/>
     <label for="query"><p>Search a Pokemon...</p></label>
-    <input name="query" id="query" required>
-    <input type="submit" value="Search">
+    <input name="query" id="query" required />
+    <input type="submit" value="Search" />
 </form>
+<div class="text-left">
+    <h3>Tips</h3>
+    <ul>
+        <li>Query using biological features.</li>
+        <li>Word2Vec uses a pre-trained model based on Wikipedia text. Words that do not exist in this vocabulary will throw an error.</li>
+    </ul>
+</div>
 {% endblock %}
