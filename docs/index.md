@@ -54,21 +54,25 @@ GPT-3 is a large neural network trained on massive datasets including Wikipedia 
 
 ## Results
 
-As IR-TF-IDF relies on counting and matching the exact words from the user’s query to each Pokemon, it will fail to return any similar Pokémon when the user’s query does not contain words found in any Pokemon's collected data.
+As IR-TF-IDF relies on counting and matching the exact words from the user’s query to each Pokemon, it will fail to return any similar Pokemon when the user’s query does not contain words found in any Pokemon's collected data.
 
-Standalone Word2Vec models failed to produce accurate results, that is, any Pokemon matching the user's query. Instead, it was incorporated into an IR-TF-IDF model.
+Standalone Word2Vec models failed to produce accurate results; that is, any Pokemon matching the user's query. Instead, it was incorporated into an IR-TF-IDF model.
+
+An investigation into vector representations of Pokemon included converting Pokemon into vectors using Doc2Vec, a similar model to Word2Vec that creates vector representations of entire documents rather than by the words. Due to the same reasons behind Word2Vec’s inaccuracy, Pokemon that look visually similar or have similar theming do not always have the most similar vectors as seen in the below figure: a heatmap of the Pearson correlation coefficient between Pokemon vectors (where a coefficient closer to 1 means a higher linear correlation between the vectors), with red outlines describing a comparatively low correlation despite being biologically similar to the other Pokemon. For example, the golem Pokemon Regice has a closer similarity to the airplane-like Latios over another golem, Regirock.
+
+<img alt="Pokemon vectors" src="images/correlation.png">
 
 GPT-3 showed impressive and reasonable results after fine-tuning the question asked to the model.
 
-A comparison between the baseline IR-TF-IDF, IR-TF-IDF with Word2Vec, and GPT-3 models is provided in the table below. When given a query whose words do not exist in the collected data (“octopus”), IR-TF-IDF provides the default result, IR-TF-IDF with Word2Vec does not return an octopus Pokémon but instead includes a squid and starfish Pokémon, and GPT-3 with its outside data sources is finally able to return an octopus Pokémon.
+A comparison between the baseline IR-TF-IDF, IR-TF-IDF with Word2Vec, and GPT-3 models is provided in the table below. When given a query whose words do not exist in the collected data (“octopus”), IR-TF-IDF provides the default result, IR-TF-IDF with Word2Vec does not return an octopus Pokemon but instead includes a squid and starfish Pokemon, and GPT-3 with its outside data sources is finally able to return an octopus Pokemon.
 
-<img alt="Model comparison" src="images/comparison.png"></img>
+<img alt="Model comparison" src="images/comparison.png">
 
 ## Conclusion
 
 A reverse dictionary for a particular domain such as a video game series is an engaging method for people to reconnect with a series they enjoy. It is useful for solving tip-of-the-tongue problems where only a few descriptors of a character are known, as it can return numerous possible matches sorted by confidence.
 
-The data collected is sufficient for baseline models and some neural networks to provide accurate results, however the latter requires more robust descriptions of each character from a variety of sources in order to cover as much of the narrow domain as possible. Extensions to this paper include additional models on the web app, more data collection from Bulbapedia such as behavior and role in the story or games. GPT-3 can be asked to provide additional descriptors on each Pokémon. Other NLP models will also benefit from sentence structure being considered and contained within the data.
+The data collected is sufficient for baseline models and some neural networks to provide accurate results, however the latter requires more robust descriptions of each character from a variety of sources in order to cover as much of the narrow domain as possible. Extensions to this paper include additional models on the web app, more data collection from Bulbapedia such as behavior and role in the story or games. GPT-3 can be asked to provide additional descriptors on each Pokemon. Other NLP models will also benefit from sentence structure being considered and contained within the data.
 
 ## Tools
 
