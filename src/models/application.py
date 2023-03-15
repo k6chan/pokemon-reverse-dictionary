@@ -11,9 +11,8 @@ from gensim.models import KeyedVectors
 from gensim.models.doc2vec import Doc2Vec, TaggedDocument
 from scipy import spatial
 
-import openai
-import os
-import re
+# import openai
+# import os
 
 
 app = Flask(__name__)
@@ -88,13 +87,14 @@ def ir_tf_idf_word2vec(query):
 
 
 def gpt_3(query):
-    response = openai.Completion.create(
-            model="text-davinci-003",
-            prompt=generate_prompt(query),
-            temperature=0.7,
-            max_tokens=256
-        )
-    result=response.choices[0].text
-    return result
-def generate_prompt(query):
-    return 'Name the top 5 actual Pokémon that match the query "{}":'.format(query)
+#     response = openai.Completion.create(
+#             model="text-davinci-003",
+#             prompt=generate_prompt(query),
+#             temperature=0.7,
+#             max_tokens=256
+#         )
+#     result=response.choices[0].text
+#     return result
+    return
+# def generate_prompt(query):
+#     return 'Name the top 5 actual Pokémon up to Generation 7 that match the query "{}":'.format(query)
